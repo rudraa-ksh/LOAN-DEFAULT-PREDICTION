@@ -15,28 +15,30 @@
     <div id ="main_text">
         <span>Check Loan Approval</span><span id="yellow_text"> Easily</span>
     </div>
-    <div class="boxes">
-        <div>
-            <label for="label1" class="labels">Age</label>  
-                <input type="text" class="search-bar" placeholder="Data">
-            <label for="label3" class="labels">Revolving Utilization of Unsecured Lines</label>
-                <input type="text" class="search-bar" placeholder="Data">
-            <label for="label5" class="labels">Debt Ratio</label>
-                <input type="text" class="search-bar" placeholder="Data">
-            <label for="label7" class="labels">Monthly Income</label>
-                <input type="text" class="search-bar" placeholder="Data">
+    <form action="predict">
+        <div class="boxes">
+            <div>
+                <label for="label1" class="labels">Age</label>  
+                    <input type="text" class="search-bar" placeholder="Data" name="age">
+                <label for="label3" class="labels">Revolving Utilization of Unsecured Lines</label>
+                    <input type="text" class="search-bar" placeholder="Data" name="RevolvingUtilizationOfUnsecuredLines">
+                <label for="label5" class="labels">Debt Ratio</label>
+                    <input type="text" class="search-bar" placeholder="Data" name="DebtRatio">
+                <label for="label7" class="labels">Monthly Income</label>
+                    <input type="text" class="search-bar" placeholder="Data" name="MonthlyIncome">
+            </div>
+            <div>
+                <label for="label2" class="labels">Number of Open Credit Lines and Loans</label>
+                    <input type="text" class="search-bar" placeholder="Data" name="NumberOfOpenCreditLinesAndLoans">
+                <label for="label4" class="labels">Number of Real Estate Loans Or Lines</label>
+                    <input type="text" class="search-bar" placeholder="Data" name="NumberofRealEstateLoansOrLines">
+                <label for="label6" class="labels">Number of Dependents</label>
+                    <input type="text" class="search-bar" placeholder="Data" name="NumberofDependents">
+            </div>
         </div>
         <div>
-            <label for="label2" class="labels">Number of Open Credit Lines and Loans</label>
-                <input type="text" class="search-bar" placeholder="Data">
-            <label for="label4" class="labels">Number of Real Estate Loans and Lines</label>
-                <input type="text" class="search-bar" placeholder="Data">
-            <label for="label6" class="labels">Number of Dependents</label>
-                <input type="text" class="search-bar" placeholder="Data">
+            <button type="submit">PREDICT</button>
         </div>
-    </div>
-    <div>
-        <button>PREDICT</button>
-    </div>
+    </form>
 </body>
 </html>
