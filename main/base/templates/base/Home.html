@@ -11,34 +11,40 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
-    <img src="{% static 'images/Picture1.png'%}" alt="Scientist Image" id="image" >
+    <img src="{% static 'images/Picture.png'%}" alt="Image" id="image" >
     <div id ="main_text">
         <span>Check Loan Approval</span><span id="yellow_text"> Easily</span>
     </div>
-    <form action="predict">
+    <form method="POST" action="{% url 'predict' %}">
+        {% csrf_token %}
         <div class="boxes">
             <div>
-                <label for="label1" class="labels">Age</label>  
+                <label for="age" class="labels">Age</label>  
                     <input type="text" class="search-bar" placeholder="Data" name="age">
-                <label for="label3" class="labels">Revolving Utilization of Unsecured Lines</label>
+                <label for="RevolvingUtilizationOfUnsecuredLines" class="labels">Revolving Utilization of Unsecured Lines</label>
                     <input type="text" class="search-bar" placeholder="Data" name="RevolvingUtilizationOfUnsecuredLines">
-                <label for="label5" class="labels">Debt Ratio</label>
+                <label for="DebtRatio" class="labels">Debt Ratio</label>
                     <input type="text" class="search-bar" placeholder="Data" name="DebtRatio">
-                <label for="label7" class="labels">Monthly Income</label>
+                <label for="MonthlyIncome" class="labels">Monthly Income</label>
                     <input type="text" class="search-bar" placeholder="Data" name="MonthlyIncome">
             </div>
             <div>
-                <label for="label2" class="labels">Number of Open Credit Lines and Loans</label>
+                <label for="NumberOfOpenCreditLinesAndLoans" class="labels">Number of Open Credit Lines and Loans</label>
                     <input type="text" class="search-bar" placeholder="Data" name="NumberOfOpenCreditLinesAndLoans">
-                <label for="label4" class="labels">Number of Real Estate Loans Or Lines</label>
-                    <input type="text" class="search-bar" placeholder="Data" name="NumberofRealEstateLoansOrLines">
-                <label for="label6" class="labels">Number of Dependents</label>
-                    <input type="text" class="search-bar" placeholder="Data" name="NumberofDependents">
+                <label for="NumberRealEstateLoansOrLines" class="labels">Number of Real Estate Loans Or Lines</label>
+                    <input type="text" class="search-bar" placeholder="Data" name="NumberRealEstateLoansOrLines">
+                <label for="NumberOfDependents" class="labels">Number of Dependents</label>
+                    <input type="text" class="search-bar" placeholder="Data" name="NumberOfDependents">
             </div>
         </div>
         <div>
             <button type="submit">PREDICT</button>
         </div>
     </form>
+    {% if result %}
+    <div>
+        <p id="result">{{result}}</p>
+    </div>
+    {% endif %}
 </body>
 </html>

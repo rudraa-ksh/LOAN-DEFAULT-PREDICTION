@@ -22,8 +22,8 @@ span{
     margin-right: 100px;
     float:right;
     background-color: transparent;
-    height: 550px;
-    width: 550px;
+    height: 500px;
+    width: 500px;
 }
 
 .search-bar {
@@ -63,4 +63,10 @@ button {
     font-weight:bold;
     color:white;
     font-size:20px;
+}
+
+#result{
+    font-size: 20px;
+    color: yellow;
+    text-align: center;
 }
