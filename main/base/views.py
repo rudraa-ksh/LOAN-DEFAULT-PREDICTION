@@ -1,8 +1,6 @@
 from django.shortcuts import render
 import pickle
 import numpy as np
-import os
-import sys
 
 model=pickle.load(open('Model/file.pkl','rb'))
 # Create your views here.
@@ -21,7 +19,7 @@ def predict(request):
         final = np.array([[DebtRatio, MonthlyIncome, RevolvingUtilizationOfUnsecuredLines, age, NumberOfOpenCreditLinesAndLoans, NumberRealEstateLoansOrLines, NumberOfDependents]])
         result = model.predict(final)
         if(result[0] == 1):
-            result ="Your Loan will not be approved"
+            result ="Borrower will Fail to repay the loan"
         else:
-            result = "Your Loan will be approved"
+            result = "Borrower will be able to repay the loan"
         return render(request, 'base/Home.html',{'result':result})

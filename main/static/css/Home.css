@@ -1,4 +1,5 @@
 body {
+    margin-top: 30px;
     background: rgb(21,31,36);
     background: linear-gradient(90deg, rgba(21,31,36,1) 0%, rgba(59,82,92,1) 69%, rgba(75,104,117,1) 74%, rgba(50,72,82,1) 87%);
     font-family: 'Poppins', sans-serif; 
